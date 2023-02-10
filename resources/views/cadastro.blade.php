@@ -25,15 +25,15 @@
         {{-- Nome, Tipo de Pessoa (Fisica ou Juridica) CPF ou CNPJ, dependendo do tipo da pessoa, e e-mail. --}}
         <div class="container mt-2">
 
-            <form action="">
+            <form id="cadastro">
                 <div class="row">
                     <div class="col">
                         <label for="nome" class="form-label">Nome</label>
                         <input id="nome" type="text" class="form-control">
                     </div>
                     <div class="col">
-                        <label for="tipoPessoa" class="form-label">Tipo de pessoa</label>
-                        <select id="tipoPessoa" class="form-select">
+                        <label for="tipo-pessoa" class="form-label">Tipo de pessoa</label>
+                        <select id="tipo-pessoa" class="form-select">
                             <option selected value="1">Pessoa física (PF)</option>
                             <option value="2">Pessoa jurídica (PJ)</option>
                         </select>
@@ -41,11 +41,11 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="inscricao">CPF</label>
+                        <label id="label-inscricao" for="inscricao" class="form-label">CPF</label>
                         <input id="inscricao" type="text" class="form-control">
                     </div>
                     <div class="col">
-                        <label for="email">E-mail</label>
+                        <label for="email" class="form-label">E-mail</label>
                         <input id="email" type="email" class="form-control">
                     </div>
                 </div>
@@ -58,7 +58,14 @@
                 </div>
             </form>
 
+            <div id="mensagens" class="mt-2 flex flex-column">
+
+            </div>
+
         </div>
 
+        @vite(['resources/js/app.js'])
+        <script src="{{ asset('js/custom.js') }}"></script>
+        <script src="{{ asset('js/vanilla-masker.min.js') }}"></script>
     </body>
 </html>
